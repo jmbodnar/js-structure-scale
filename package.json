@@ -1,0 +1,13 @@
+{
+  "name": "js-structure-scale",
+  "scripts": {
+    "start": "browser-sync --watch ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-jmbodnar:jmbodnar/js-structure-scale.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.7"
+  }
+}
