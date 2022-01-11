@@ -1,10 +1,10 @@
 const convert = (function () {
   function confirmNumber(value) {
-    if (typeof value !== 'number') {
+    if (typeof Number.parseFloat(value) !== 'number') {
       throw TypeError('Value must be a number')
     }
 
-    if (!isFinite(value)) {
+    if (!isFinite(Number.parseFloat(value))) {
       throw TypeError('Value must be a number')
     }
   }
