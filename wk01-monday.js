@@ -1,3 +1,5 @@
+// @ts-check
+
 const convert = (function () {
   function clearValue(value) {
     if (!Number.parseFloat(value)) {
