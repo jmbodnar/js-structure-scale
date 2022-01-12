@@ -1,0 +1,19 @@
+body {
+  background: white;
+  color: #333;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.header,
+.footer {
+  background: whitesmoke;
+  padding: .25em;
+}

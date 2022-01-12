@@ -1,0 +1,8 @@
+@import "../../../node_modules/sanitize.css/sanitize.css";
+@import "./fonts.css";
+@import "./layout.css";
+
+body {
+  font-family: "Inter";
+  color: #333;
+}

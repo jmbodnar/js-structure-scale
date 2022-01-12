@@ -1,0 +1,1 @@
+console.log("You loaded the main.js file");

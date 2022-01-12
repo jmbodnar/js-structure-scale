@@ -1,7 +1,9 @@
 {
   "name": "js-structure-scale",
   "scripts": {
-    "start": "browser-sync --watch ./"
+    "serve": "browser-sync www -w",
+    "postcss": "postcss www/css/dev/main.css --output www/css/style.css --verbose --map --watch",
+    "start": "npm run serve & npm run postcss"
   },
   "repository": {
     "type": "git",
@@ -9,5 +11,13 @@
   },
   "devDependencies": {
     "browser-sync": "^2.27.7"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^7.2.3",
+    "sanitize.css": "^13.0.0"
   }
 }
