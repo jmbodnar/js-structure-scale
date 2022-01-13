@@ -9,11 +9,9 @@
     "type": "git",
     "url": "git@github-jmbodnar:jmbodnar/js-structure-scale.git"
   },
-  "devDependencies": {
-    "browser-sync": "^2.27.7"
-  },
   "dependencies": {
     "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
