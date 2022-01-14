@@ -559,4 +559,15 @@ body {
   padding: 0.25em;
 }
 
+/* Utilities */
+
+.flow-content > * {
+  margin: 0;
+}
+
+.flow-content > * + * {
+  margin-top: 1em;
+}
+
+/* End Utilities */
 /*# sourceMappingURL=style.css.map */

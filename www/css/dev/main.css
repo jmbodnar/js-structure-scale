@@ -2,3 +2,15 @@
 @import "./fonts.css";
 @import "./base.css";
 @import "./layout.css";
+
+/* Utilities */
+
+.flow-content > * {
+  margin: 0;
+}
+
+.flow-content > * + * {
+  margin-top: 1em;
+}
+
+/* End Utilities */
