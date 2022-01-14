@@ -45,5 +45,5 @@ const Weight = (function () {
   return Constructor;
 })();
 
-let test = new Weight(1).addMilligrams(1).addKilograms(1).addGrams(1).format();
+const test = new Weight(1).addMilligrams(1).addKilograms(1).addGrams(1).format();
 console.log(test); // 1,002.001 g
