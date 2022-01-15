@@ -45,14 +45,4 @@ const Weight = (function () {
   return Constructor;
 })();
 
-const test = new Weight(1)
-  .addMilligrams(1)
-  .addKilograms(1)
-  .addGrams(1)
-  .format();
-console.log(test); // 1,002.001 g
-
-const hummingbird = new Weight(4);
-hummingbird.addMilligrams(150).addGrams(1);
-
-console.log(hummingbird);
+export { Weight };
