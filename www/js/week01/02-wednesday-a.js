@@ -28,10 +28,7 @@ const Weight = (function () {
   return Constructor;
 })();
 
-let weightA = new Weight(100); // Create a weight object, weightA
-
-weightA.add(10); // Add 10 to weight, 110
-
-const formattedWeightString = weightA.format();
-
-console.log(formattedWeightString); // "110 lb"
+// let weightA = new Weight(100); // Create a weight object, weightA
+// weightA.add(10); // Add 10 to weight, 110
+// const formattedWeightString = weightA.format();
+// console.log(formattedWeightString); // "110 lb"

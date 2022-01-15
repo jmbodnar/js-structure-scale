@@ -16,10 +16,9 @@ const Weight = (function () {
   return Constructor;
 })();
 
-const oneGram = new Weight(1);
-const kg = oneGram.inKilograms();
-const mg = oneGram.inMilligrams();
-
-console.log(
-  `${oneGram.weight} gram is one thousandth (${kg}) of a kilogram and ${mg} milligrams.`
-);
+// const oneGram = new Weight(1);
+// const kg = oneGram.inKilograms();
+// const mg = oneGram.inMilligrams();
+// console.log(
+//   `${oneGram.weight} gram is one thousandth (${kg}) of a kilogram and ${mg} milligrams.`
+// );
