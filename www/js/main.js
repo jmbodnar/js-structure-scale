@@ -1,3 +1,3 @@
 // @ts-check
 
-import { Weight } from "./week02/01-monday-lesson.js";
+import Convert from "./week02/02-monday-project.js";

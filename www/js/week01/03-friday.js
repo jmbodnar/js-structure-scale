@@ -45,8 +45,6 @@ const Weight = (function () {
   return Constructor;
 })();
 
-export { Weight };
-
 // const test = new FridayWeight(1)
 //   .addMilligrams(1)
 //   .addKilograms(1)
@@ -58,3 +56,5 @@ export { Weight };
 // hummingbird.addMilligrams(150).addGrams(1);
 
 // console.log(hummingbird);
+
+export { Weight };
