@@ -218,3 +218,9 @@ let formatted = current.add(5).add(5).add(10).format();
 // returns 120
 let stronger = current.weight;
 ```
+
+## Constructor with Settings, Options and Chaining
+
+```js
+
+```
