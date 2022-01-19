@@ -1,3 +1,3 @@
 // @ts-check
 
-import Convert from "./week02/03-tuesday-project-update.js";
+import WeightConverter from "./week02/04-weight-converter.js";
