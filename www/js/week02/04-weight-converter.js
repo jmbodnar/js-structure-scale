@@ -1,7 +1,26 @@
 // @ts-check
 
 const WeightConverter = (function () {
+  /**
+   * Verify permitted unit
+   * @param {string} unit — permitted value of gram, milligram, or kilogram
+   */
+  function approveUnit(unit) {
+    if (!["gram", "milligram", "kilogram"].includes(unit)) {
+      throw Error(
+        `${unit} is invalid. Value must be gram, milligram, or kilogram`
+      );
+    }
+  }
+
+  /**
+   * Convert weight to grams
+   * @param {number} weight - weight for conversion
+   * @param {string} unit - starting unit for converstion
+   * @return {number} Converted weight from unit to grams
+   */
   function convertToGrams(weight, unit) {
+    approveUnit(unit);
     let gramWeight;
 
     switch (unit) {
@@ -19,14 +38,6 @@ const WeightConverter = (function () {
     return gramWeight;
   }
 
-  function approveUnit(unit) {
-    if (!["gram", "milligram", "kilogram"].includes(unit)) {
-      throw Error(
-        `${unit} is invalid. Value must be gram, milligram, or kilogram`
-      );
-    }
-  }
-
   function Constructor(weight, options = {}) {
     const settings = Object.assign(
       {
@@ -35,7 +46,6 @@ const WeightConverter = (function () {
       options
     );
 
-    approveUnit(settings.unit);
     this.weight = convertToGrams(weight, settings.unit);
   }
 
