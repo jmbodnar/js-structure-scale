@@ -40,15 +40,15 @@ const WeightConverter = (function () {
   }
 
   Constructor.prototype.inGrams = function () {
-    return this.weight + ' g';
+    return this.weight + " g";
   };
 
   Constructor.prototype.inKilograms = function () {
-    return (this.weight / 1000) + ' kg';
+    return this.weight / 1000 + " kg";
   };
 
   Constructor.prototype.inMilligrams = function () {
-    return (this.weight * 1000) + ' mg';
+    return this.weight * 1000 + " mg";
   };
 
   Constructor.prototype.plus = function (weight, unit) {
@@ -69,6 +69,6 @@ const WeightConverter = (function () {
 })();
 
 const gramTest = new WeightConverter(1, { unit: "milligram" });
-console.log(gramTest.plus(2, 'milligram').minus(8, 'milligram').inGrams());
+console.log(gramTest.plus(2, "milligram").minus(8, "milligram").inGrams());
 
 export default WeightConverter;
