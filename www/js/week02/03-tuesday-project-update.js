@@ -59,6 +59,6 @@ let Convert = (function () {
   return Constructor;
 })();
 
-const test1 = new Convert(4, {units: 'kg'});
+const test1 = new Convert(4, { units: "kg" });
 
 export default Convert;
