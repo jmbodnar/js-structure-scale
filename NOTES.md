@@ -227,4 +227,4 @@ let stronger = current.weight;
 
 ```
 
-## Creating an IIFE Utility library 
+## Creating an IIFE Utility library
