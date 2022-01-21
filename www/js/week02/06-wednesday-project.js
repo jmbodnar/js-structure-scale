@@ -16,9 +16,6 @@ export const time = (function () {
   // }
 
   // Using the Intl.DateTimeFormat object
-  function getWeekday(date) {
-    return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(date);
-  }
 
   // function getMonth(date) {
   //   const months = [
@@ -38,6 +35,10 @@ export const time = (function () {
 
   //   return months[date.getMonth()];
   // }
+
+  function getWeekday(date) {
+    return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(date);
+  }
 
   function getMonth(date) {
     return new Intl.DateTimeFormat("en-US", { month: "long" }).format(date);
