@@ -3,6 +3,8 @@
   - [Revealing Module Pattern](#revealing-module-pattern)
   - [Constructor Pattern](#constructor-pattern)
   - [Chaining Methods with the Constructor Pattern](#chaining-methods-with-the-constructor-pattern)
+  - [Constructor with Settings, Options and Chaining](#constructor-with-settings-options-and-chaining)
+  - [Creating an IIFE Utility library](#creating-an-iife-utility-library)
 
 # Library Patterns
 
@@ -224,3 +226,5 @@ let stronger = current.weight;
 ```js
 
 ```
+
+## Creating an IIFE Utility library 
