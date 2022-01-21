@@ -34,6 +34,11 @@ function addYears(date, years) {
   date.setFullYear(date.getFullYear() + years);
 }
 
+function sayHi() {
+  // test helper
+  console.log("HI");
+}
+
 export {
   getWeekday,
   getMonth,
@@ -44,3 +49,16 @@ export {
   addMonths,
   addYears,
 };
+
+
+/* 
+// In my main js file....
+
+import * as fridayModule from "./week02/07-friday-a.js";
+
+const randoDato = new Date("April 11, 1975");
+const randoDatoWeekday = fridayModule.getWeekday(randoDato);
+
+console.log(randoDatoWeekday); // Friday
+
+*/

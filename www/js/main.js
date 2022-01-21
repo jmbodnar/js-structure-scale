@@ -1,7 +1,7 @@
 // @ts-check
+import * as fridayModule from "./week02/07-friday-a.js";
 
-import { getWeekday } from "./week02/07-friday-a.js";
+const randoDato = new Date("April 11, 1975");
+const randoDatoWeekday = fridayModule.getWeekday(randoDato);
 
-const bday = new Date("April 11, 1975");
-const bdayWeekday = getWeekday(bday);
-console.log(bdayWeekday);
+console.log(randoDatoWeekday);
