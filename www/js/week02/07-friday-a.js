@@ -34,11 +34,6 @@ function addYears(date, years) {
   date.setFullYear(date.getFullYear() + years);
 }
 
-function sayHi() {
-  // test helper
-  console.log("HI");
-}
-
 export {
   getWeekday,
   getMonth,
