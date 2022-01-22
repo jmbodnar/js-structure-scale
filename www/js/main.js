@@ -1,3 +1,4 @@
 // @ts-check
 
-import * as practice from "./week00/practice00.js";
+// export default convert;
+import convert from "./week00/practice00-revealing-module-pattern.js";
