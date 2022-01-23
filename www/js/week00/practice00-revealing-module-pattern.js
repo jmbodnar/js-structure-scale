@@ -6,7 +6,6 @@
 
 // IIFE returns object (reveals) internal functions for use with the library
 const convert = (function () {
-  // Internal helper
   function verifyUnit(unit) {
     const validUnits = [
       "gram",
@@ -21,57 +20,61 @@ const convert = (function () {
     ];
 
     if (!validUnits.includes(unit))
-      throw Error(`Invalid Unit: ${unit}. Must be ${validUnits.toString()} `);
+      throw Error(`Unit must be one of ${validUnits.join(", ")} `);
   }
+
+  const fromUnits = {
+    kg: "fromKilograms",
+    kilogram: "fromKilograms",
+    kilograms: "fromKilograms",
+    gm: "fromGrams",
+    gram: "fromGrams",
+    grams: "fromGrams",
+    mg: "fromMilligrams",
+    milligram: "fromMilligrams",
+    milligrams: "fromMilligrams",
+  };
 
   function toGrams(mass, unit) {
     verifyUnit(unit);
-    let grams;
 
-    switch (unit) {
-      case "kilogram":
-      case "kilograms":
-      case "kg":
-        grams = mass / 1000;
-        break;
-      case "milligram":
-      case "milligrams":
-      case "mg":
-        grams = mass * 1000;
-        break;
-      default:
-        grams = mass;
-    }
+    const conversions = {
+      fromMilligrams: () => mass / 1000,
+      fromGrams: () => mass,
+      fromKilograms: () => mass * 1000,
+    };
 
-    return grams;
+    return conversions[fromUnits[unit]]();
   }
 
   function toKilograms(mass, unit) {
     verifyUnit(unit);
-    let kilograms;
 
-    // ...
+    const conversions = {
+      fromMilligrams: () => mass / Number("1e+6"),
+      fromGrams: () => mass / 1000,
+      fromKilograms: () => mass,
+    };
 
-    return kilograms;
+    return conversions[fromUnits[unit]]();
   }
 
   function toMilligrams(mass, unit) {
     verifyUnit(unit);
-    let milligrams;
+    const conversions = {
+      fromKilograms: () => mass * Number("1e+6"),
+      fromMilligrams: () => mass,
+      fromGrams: () => mass * 1000,
+    };
 
-    // ...
-
-    return milligrams;
+    return conversions[fromUnits[unit]]();
   }
 
   return {
     toGrams,
-    // toKilograms,
-    // toMilligrams,
+    toKilograms,
+    toMilligrams,
   };
 })();
 
 export default convert;
-
-let testA = convert.toGrams(1, "kilogramss");
-console.log(testA);
