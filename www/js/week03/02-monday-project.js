@@ -1,7 +1,18 @@
 // @ts-check
 
 const Time = (function () {
+  function validateDate(date) {
+    const checkedDate = new Date(date).toString();
+
+    if (checkedDate === "Invalid Date") {
+      throw Error(
+        "Invalid datestring. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date"
+      );
+    }
+  }
+
   function Constructor(date) {
+    validateDate(date);
     this.dateObject = new Date(date);
   }
 
