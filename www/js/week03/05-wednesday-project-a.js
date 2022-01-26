@@ -1,5 +1,4 @@
 // @ts-check
-// 05-wednesday-project-a.js
 
 function Constructor(date = []) {
   if (!Array.isArray(date)) {
