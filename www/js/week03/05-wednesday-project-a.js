@@ -15,7 +15,9 @@ function Constructor(date = [], options = {}) {
     date = [date];
   }
 
-  const settings = Object.assign(
+  this.date = new Date(...date);
+
+  const _settings = Object.assign(
     {
       locale: "en",
       dateStyle: "long",
@@ -26,13 +28,11 @@ function Constructor(date = [], options = {}) {
     options
   );
 
-  this.date = new Date(...date);
-
-  Object.freeze(settings);
+  Object.freeze(_settings);
 
   Object.defineProperties(this, {
     date: { value: this.date },
-    settings: { value: settings },
+    _settings: { value: _settings },
   });
 }
 
@@ -41,26 +41,26 @@ Constructor.prototype.date = function () {
 };
 
 Constructor.prototype.getDay = function () {
-  return new Intl.DateTimeFormat(this.settings.locale, {
-    weekday: this.settings.weekday,
+  return new Intl.DateTimeFormat(this._settings.locale, {
+    weekday: this._settings.weekday,
   }).format(this.date);
 };
 
 Constructor.prototype.getMonth = function () {
-  return new Intl.DateTimeFormat(this.settings.locale, {
-    month: this.settings.month,
+  return new Intl.DateTimeFormat(this._settings.locale, {
+    month: this._settings.month,
   }).format(this.date);
 };
 
 Constructor.prototype.getTime = function () {
-  return new Intl.DateTimeFormat(this.settings.locale, {
-    timeStyle: this.settings.timeStyle,
+  return new Intl.DateTimeFormat(this._settings.locale, {
+    timeStyle: this._settings.timeStyle,
   }).format(this.date);
 };
 
 Constructor.prototype.getDate = function () {
-  return new Intl.DateTimeFormat(this.settings.locale, {
-    dateStyle: this.settings.dateStyle,
+  return new Intl.DateTimeFormat(this._settings.locale, {
+    dateStyle: this._settings.dateStyle,
   }).format(this.date);
 };
 
