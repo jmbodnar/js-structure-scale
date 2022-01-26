@@ -13,13 +13,25 @@ Constructor.prototype.date = function () {
 };
 
 Constructor.prototype.getWeekday = function () {
-  return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
+  return new Intl.DateTimeFormat("en", { weekday: "long" }).format(
     this.dateObject
   );
 };
 
 Constructor.prototype.getMonth = function () {
-  return new Intl.DateTimeFormat("en-US", { month: "long" }).format(
+  return new Intl.DateTimeFormat("en", { month: "long" }).format(
+    this.dateObject
+  );
+};
+
+Constructor.prototype.getTime = function () {
+  return new Intl.DateTimeFormat("en", { timeStyle: "long" }).format(
+    this.dateObject
+  );
+};
+
+Constructor.prototype.getDate = function () {
+  return new Intl.DateTimeFormat("en", { dateStyle: "long" }).format(
     this.dateObject
   );
 };
@@ -55,23 +67,3 @@ Constructor.prototype.addYears = function (years) {
 };
 
 export default Constructor;
-
-// import Time from "./week03/04-tuesday-project-updated.js";
-// // Create a new Time() instance
-// let halloween = new Constructor("October 31, 2021");
-// let halloween2 = new Constructor([2021, 9, 31]);
-// let now = new Constructor();
-// console.log(halloween, halloween2, now);
-
-// // Get details from the instance
-// let date = halloween.date();
-// let day = halloween.getWeekday();
-// let month = halloween.getMonth();
-// console.log(date, day, month);
-
-// // Add some time, then check again
-// halloween.addDays(3).addMonths(1).addYears(5);
-// let newDate = halloween.date();
-// let newDay = halloween.getWeekday();
-// let newMonth = halloween.getMonth();
-// console.log(newDate, newDay, newMonth);

@@ -132,3 +132,17 @@ let Weight = (function () {
 let monday = new Weight(100);
 let wednesday = monday.add(10);
 ```
+
+Project Notes/Instructions
+
+Modify the date library to support developer options and immutable instances.
+Allow users to pass options to change the text returned from the getWeekday(),
+getMonth(), and related methods. Users can pass options to set the locales,
+dateStyle, timeStyle, weekday, and month values. They are set in the settings and
+allowed in the individual functions if desired.
+
+References:
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
+- https://tc39.es/ecma402/#sec-intl-datetimeformat-constructor
+- https://www.w3schools.com/tags/ref_language_codes.asp
