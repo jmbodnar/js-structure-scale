@@ -60,6 +60,75 @@ const Weight = (function () {
 
   // ...
 
-  return Constrructor;
+  return Constructor;
 })();
+```
+
+Sometimes you want a library to be immutable. One option is to return a new instance
+with each update to your property you want to remain. In our exmaple weight library
+this might mean returning a new instance with each call to the library's add() or
+subtract methods. For example, ...
+
+```js
+let Weight = (function () {
+  /**
+   * The Constructor object
+   * @param {Number} weight  The starting weight
+   * @param {Object} options Settings and options for this instance
+   */
+  function Constructor(weight, options = {}) {
+    // Combine user options and default settings
+    let settings = Object.assign(
+      {
+        units: "pound",
+      },
+      options
+    );
+
+    // Freeze settings so that they cannot be modified
+    Object.freeze(settings);
+
+    // Define instance properties
+    Object.defineProperties(this, {
+      weight: { value: weight },
+      _settings: { value: settings },
+    });
+  }
+
+  /**
+   * Add an amount to a weight
+   * @param {Number} amount The amount to add
+   */
+  Constructor.prototype.add = function (amount) {
+    let weight = this.weight + amount;
+    return new Constructor(weight, this._settings);
+  };
+
+  /**
+   * Subtract an amount from a weight
+   * @param {Number} amount The amount to subtract
+   */
+  Constructor.prototype.subtract = function (amount) {
+    let weight = this.weight - amount;
+    return new Constructor(weight, this._settings);
+  };
+
+  /**
+   * Format a weight to a string
+   * @param  {String} units  The weight units to use
+   * @return {String}        The formatted weight
+   */
+  Constructor.prototype.format = function (units) {
+    return this.weight.toLocaleString(undefined, {
+      style: "unit",
+      unit: units ? units : this._settings.units,
+    });
+  };
+
+  // Export the constructor object
+  return Constructor;
+})();
+
+let monday = new Weight(100);
+let wednesday = monday.add(10);
 ```
