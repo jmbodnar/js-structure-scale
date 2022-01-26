@@ -19,9 +19,9 @@ function Constructor(date = [], options = {}) {
 
   const _settings = Object.assign(
     {
-      locale: "en",
-      dateStyle: "long",
-      timeStyle: "long",
+      locale: "en-US",
+      dateStyle: "full",
+      timeStyle: "full",
       weekday: "long",
       month: "long",
     },
