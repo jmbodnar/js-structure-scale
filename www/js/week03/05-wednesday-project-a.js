@@ -23,7 +23,9 @@ function Constructor(date = [], options = {}) {
   Object.freeze(_settings);
 
   Object.defineProperties(this, {
-    date: { value: new Date(...date) },
+    date: {
+      value: new Date(...date),
+    },
     _settings: { value: _settings },
   });
 }
@@ -53,39 +55,45 @@ Constructor.prototype.getDate = function () {
 };
 
 Constructor.prototype.addSeconds = function (seconds) {
-  const newInstance = new Constructor(this.date, this._settings);
-  newInstance.date.setSeconds(newInstance.date.getSeconds() + seconds);
-  return newInstance;
+  const newSeconds = this.date.getSeconds() + seconds;
+  const newDate = new Date(this.date);
+  newDate.setSeconds(newSeconds);
+  return new Constructor(newDate, this._settings);
 };
 
 Constructor.prototype.addMinutes = function (minutes) {
-  const newInstance = new Constructor(this.date, this._settings);
-  newInstance.date.setMinutes(newInstance.date.getMinutes() + minutes);
-  return newInstance;
+  const newMinutes = this.date.getMinutes() + minutes;
+  const newDate = new Date(this.date);
+  newDate.setMinutes(newMinutes);
+  return new Constructor(newDate, this._settings);
 };
 
 Constructor.prototype.addHours = function (hours) {
-  const newInstance = new Constructor(this.date, this._settings);
-  newInstance.date.setHours(newInstance.date.getHours() + hours);
-  return newInstance;
+  const newHours = this.date.getHours() + hours;
+  const newDate = new Date(this.date);
+  newDate.setHours(newHours);
+  return new Constructor(newDate, this._settings);
 };
 
 Constructor.prototype.addDays = function (days) {
-  const newInstance = new Constructor(this.date, this._settings);
-  newInstance.date.setDate(newInstance.date.getDate() + days);
-  return newInstance;
+  const newDays = this.date.getDay() + days;
+  const newDate = new Date(this.date);
+  newDate.setDate(newDays);
+  return new Constructor(newDate, this._settings);
 };
 
 Constructor.prototype.addMonths = function (months) {
-  const newInstance = new Constructor(this.date, this._settings);
-  newInstance.date.setMonth(newInstance.date.getMonth() + months);
-  return newInstance;
+  const newMonths = this.date.getMonth() + months;
+  const newDate = new Date(this.date);
+  newDate.setMonth(newMonths);
+  return new Constructor(newDate, this._settings);
 };
 
 Constructor.prototype.addYears = function (years) {
-  const newInstance = new Constructor(this.date, this._settings);
-  newInstance.date.setFullYear(newInstance.date.getFullYear() + years);
-  return newInstance;
+  const newYears = this.date.getFullYear() + years;
+  const newDate = new Date(this.date);
+  newDate.setFullYear(newYears);
+  return new Constructor(newDate, this._settings);
 };
 
 export default Constructor;
