@@ -15,7 +15,7 @@ const instanceB = instanceA
   .addSeconds(34);
 
 const instanceC = new Time("December 19, 1975 10:42 AM", {
-  locale: "zh",
+  locale: "es",
   dateStyle: "short",
   timeStyle: "short",
   weekday: "short",
