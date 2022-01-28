@@ -2,6 +2,7 @@ import Time from "./week03/07-friday-project-a.js";
 
 // Create a Time instances, halloween
 const halloween = new Time("October 31, 2020 10:30 AM");
+console.log("Start:", halloween.dateString());
 
 // Listen for the time:update event
 document.addEventListener("time:update", function (event) {
@@ -15,4 +16,5 @@ document.addEventListener("time:update", function (event) {
 // Update month and year as test
 halloween.addDays(3).addMonths(1).addYears(3);
 
-console.log(halloween.dateString());
+// Verify updates
+console.log("End:", halloween.dateString());

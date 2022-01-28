@@ -88,4 +88,4 @@ Constructor.prototype.addYears = function (years) {
   return this;
 };
 
-export default Constructor;
+export { Constructor as default, Constructor as Time };
