@@ -4,6 +4,7 @@
  * @param {Array} date      Set date with string, object, or array of arguments
  * @param {Object} options  Override default settings with user-defined options
  */
+
 function Constructor(date = [], options = {}) {
   if (!Array.isArray(date)) {
     date = [date];
@@ -30,7 +31,7 @@ function Constructor(date = [], options = {}) {
   });
 }
 
-Constructor.prototype.dateString = function () {
+Constructor.prototype.getDateString = function () {
   return this.date.toString();
 };
 
@@ -59,33 +60,81 @@ Constructor.prototype.getDate = function () {
 };
 
 Constructor.prototype.addSeconds = function (seconds) {
+  let canceled = !emitEvent("time:update", { date: this.date });
+
+  if (canceled) {
+    return this;
+  }
+
   this.date.setSeconds(this.date.getSeconds() + seconds);
   return this;
 };
 
 Constructor.prototype.addMinutes = function (minutes) {
+  let canceled = !emitEvent("time:update", { date: this.date });
+
+  if (canceled) {
+    return this;
+  }
+
   this.date.setMinutes(this.date.getMinutes() + minutes);
   return this;
 };
 
 Constructor.prototype.addHours = function (hours) {
+  let canceled = !emitEvent("time:update", { date: this.date });
+
+  if (canceled) {
+    return this;
+  }
+
   this.date.setHours(this.date.getHours() + hours);
   return this;
 };
 
 Constructor.prototype.addDays = function (days) {
+  let canceled = !emitEvent("time:update", { date: this.date });
+
+  if (canceled) {
+    return this;
+  }
+
   this.date.setDate(this.date.getDate() + days);
   return this;
 };
 
 Constructor.prototype.addMonths = function (months) {
+  let canceled = !emitEvent("time:update", { date: this.date });
+
+  if (canceled) {
+    return this;
+  }
+
   this.date.setMonth(this.date.getMonth() + months);
   return this;
 };
 
 Constructor.prototype.addYears = function (years) {
+  let canceled = !emitEvent("time:update", { date: this.date });
+
+  if (canceled) {
+    return this;
+  }
+
   this.date.setFullYear(this.date.getFullYear() + years);
   return this;
 };
+
+function emitEvent(type, detail = {}, elem = document) {
+  if (!type) return;
+
+  const event = new CustomEvent(type, {
+    bubbles: true,
+    cancelable: true,
+    detail: detail,
+  });
+
+  return elem.dispatchEvent(event);
+}
 
 export { Constructor as default, Constructor as Time };

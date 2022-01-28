@@ -1,20 +1,17 @@
 import Time from "./week03/07-friday-project-a.js";
 
-// Create a Time instances, halloween
-const halloween = new Time("October 31, 2020 10:30 AM");
-console.log("Start:", halloween.dateString());
+// Create a new Time() instance
+let halloween = new Time("October 31, 2021");
+console.log(halloween.getDateString());
 
-// Listen for the time:update event
+// If the year on the Time() instance is greater than 2021, don't update
 document.addEventListener("time:update", function (event) {
-  // Verify current years is less than 2021 and only update if so
-  if (event.detail.time.date.getFullYear() >= 2021) {
-    console.log("It's already 2021 or greater!");
+  if (event.detail.date.getFullYear() >= 2021) {
     event.preventDefault();
   }
 });
 
-// Update month and year as test
-halloween.addDays(3).addMonths(1).addYears(3);
-
-// Verify updates
-console.log("End:", halloween.dateString());
+// Adjust the date
+// the addYears() method won't update the date in this instance
+halloween.addDays(3).addMonths(1).addYears(1);
+console.log(halloween.getDateString());
