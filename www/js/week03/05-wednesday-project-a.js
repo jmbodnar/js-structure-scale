@@ -32,6 +32,10 @@ function Constructor(date = [], options = {}) {
   });
 }
 
+Constructor.prototype.dateString = function () {
+  return this.date.toString();
+};
+
 Constructor.prototype.getDay = function () {
   return new Intl.DateTimeFormat(this._settings.locale, {
     weekday: this._settings.weekday,

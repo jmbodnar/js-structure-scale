@@ -146,3 +146,25 @@ References:
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
 - https://tc39.es/ecma402/#sec-intl-datetimeformat-constructor
 - https://www.w3schools.com/tags/ref_language_codes.asp
+
+## Friday Notes
+
+You can use the `CustomEvent('event-name', options)` constructor to create a
+custom event and then dispatch it with the document.dispatchEvent(event) function.
+Others can use the addEventListener function to detect and react to.
+
+```js
+document.addEventListener("my-custom-event", function (event) {
+  console.log(event.detail);
+});
+
+const event = new CustomEvent("my-custom-event", {
+  bubbles: true,
+  // Set cancelable to true to allows others to use event.preventDefault() and
+  // forego expected behavior
+  cancelable: true,
+  detail: "String, object or array accessible at event.detail",
+});
+
+document.dispatchEvent(event);
+```
