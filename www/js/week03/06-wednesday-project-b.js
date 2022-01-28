@@ -11,9 +11,9 @@ function Constructor(date = [], options = {}) {
 
   const _settings = Object.assign(
     {
-      // https://www.w3schools.com/tags/ref_language_codes.asp
-      locale: "en-US",
+      // See Intl.DateTimeFormat() Constructor options:
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
+      locale: "en-US",
       dateStyle: "full",
       timeStyle: "full",
       weekday: "long",
