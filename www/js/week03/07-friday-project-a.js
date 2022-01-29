@@ -1,10 +1,3 @@
-/**
- * Time Constructor function, mutable instance
- *
- * @param {Array} date      Set date with string, object, or array of arguments
- * @param {Object} options  Override default settings with user-defined options
- */
-
 function Constructor(date = [], options = {}) {
   if (!Array.isArray(date)) {
     date = [date];
