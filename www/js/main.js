@@ -1,17 +1,30 @@
-import Time from "./week03/07-friday-project-a.js";
+import Time from "./week03/08-saturday-project-b.js";
 
-// Create a new Time() instance
-let halloween = new Time("October 31, 2021");
-console.log(halloween.getDateString());
-
-// If the year on the Time() instance is greater than 2021, don't update
 document.addEventListener("time:update", function (event) {
-  if (event.detail.date.getFullYear() >= 2021) {
-    event.preventDefault();
+  if (event.detail.afterUpdate.getFullYear() >= 2023) {
+    console.log(
+      "Event canceled: \n - ",
+      event.detail.beforeUpdate.toString(),
+      "(before)",
+      "\n - ",
+      event.detail.afterUpdate.toString(),
+      "(after)"
+    );
+    return event.preventDefault();
   }
+  console.log("updatedTime: ", event.detail.afterUpdate.toString());
 });
 
-// Adjust the date
-// the addYears() method won't update the date in this instance
-halloween.addDays(3).addMonths(1).addYears(1);
-console.log(halloween.getDateString());
+let startTime = new Time("January 1, 2021");
+
+let updatedTime = startTime
+  .addSeconds(1)
+  .addSeconds(1)
+  .addMinutes(20)
+  .addHours(10)
+  .addDays(3)
+  .addMonths(3)
+  .addYears(1)
+  .addMonths(12);
+
+console.log(updatedTime.getDateString());
