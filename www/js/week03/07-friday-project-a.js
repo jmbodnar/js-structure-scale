@@ -130,4 +130,4 @@ function emitEvent(type, detail = {}, elem = document) {
   return elem.dispatchEvent(event);
 }
 
-export { Constructor as default, Constructor as Time };
+export default Constructor;
