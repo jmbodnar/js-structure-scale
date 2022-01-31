@@ -3,8 +3,9 @@
   "scripts": {
     "serve": "browser-sync www -w",
     "postcss": "postcss www/css/dev/main.css --output www/css/style.css --verbose --map --watch",
-    "start": "npm run serve & npm run postcss",
-    "format": "prettier --write ."
+    "prettier": "prettier --write .",
+    "rollup": "rollup --config",
+    "start": "npm run serve & npm run postcss"
   },
   "repository": {
     "type": "git",
