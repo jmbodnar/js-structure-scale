@@ -10,14 +10,15 @@
     "type": "git",
     "url": "git@github-jmbodnar:jmbodnar/js-structure-scale.git"
   },
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.7",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "^7.2.3",
+    "postcss-preset-env": "^7.3.0",
     "prettier": "^2.5.1",
+    "rollup": "^2.66.1",
     "sanitize.css": "^13.0.0"
   }
 }
