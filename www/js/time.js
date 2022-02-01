@@ -1,5 +1,5 @@
 var Time = (function () {
-  'use strict';
+  "use strict";
 
   function Constructor(date = [], options = {}) {
     if (!Array.isArray(date)) {
@@ -134,5 +134,4 @@ var Time = (function () {
   }
 
   return Constructor;
-
 })();
