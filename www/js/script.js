@@ -1,5 +1,5 @@
 (function () {
-  "use strict";
+  'use strict';
 
   function Constructor(date = [], options = {}) {
     if (!Array.isArray(date)) {
@@ -204,4 +204,5 @@
     .addYears(3);
 
   console.log("END TIME:", endTime.getDate());
+
 })();
