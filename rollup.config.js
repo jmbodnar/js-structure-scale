@@ -39,7 +39,7 @@
 
 import pkg from "./package.json";
 
-const banner = `/* -- ${pkg.name} v${pkg.version} | ${
+const banner = `/* -- ${pkg.title} v${pkg.version} | ${
   pkg.description
 } | Copyright ${new Date().getFullYear()} -- */`;
 const formats = ["iife", "es", "cjs"];
@@ -49,8 +49,10 @@ const rollupConfig = formats.map((format) => {
     input: "www/js/week03/07-friday-project-a.js",
     output: {
       file: `www/js/time-${format}.js`,
-      name: pkg.name,
+      name: pkg.title,
       banner: banner,
+      format: format,
+      exports: "auto",
     },
   };
 });
