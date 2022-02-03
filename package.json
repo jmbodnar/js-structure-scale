@@ -1,5 +1,7 @@
 {
   "name": "js-structure-scale",
+  "version": "0.0.0",
+  "description": "Work for learning projects",
   "scripts": {
     "serve": "browser-sync www -w",
     "postcss": "postcss www/css/dev/main.css --output www/css/style.css --verbose --map --watch",
