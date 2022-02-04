@@ -1,6 +1,6 @@
 /* -- Time v0.0.0 | Work for learning projects | Copyright 2022 -- */
 var Time = (function () {
-  'use strict';
+  "use strict";
 
   function Constructor(date = [], options = {}) {
     if (!Array.isArray(date)) {
@@ -135,5 +135,4 @@ var Time = (function () {
   }
 
   return Constructor;
-
 })();

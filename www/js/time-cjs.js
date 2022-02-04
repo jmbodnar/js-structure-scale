@@ -1,5 +1,5 @@
 /* -- Time v0.0.0 | Work for learning projects | Copyright 2022 -- */
-'use strict';
+"use strict";
 
 function Constructor(date = [], options = {}) {
   if (!Array.isArray(date)) {
