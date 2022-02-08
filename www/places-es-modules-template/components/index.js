@@ -56,11 +56,11 @@ function clickHandler(event) {
   let id = btn.getAttribute("data-fave");
 
   // Update button UI and save
-  if (btn.classList.contains("is-active")) {
-    btn.classList.remove("is-active");
+  if (btn.getAttribute("aria-pressed") === "true") {
+    btn.setAttribute("aria-pressed", "false");
     removeFave(id);
   } else {
-    btn.classList.add("is-active");
+    btn.setAttribute("aria-pressed", "true");
     addFave(id);
   }
 }
@@ -79,8 +79,8 @@ function loadButtons() {
 
   // Inject buttons
   controls.innerHTML = `<p>
-			<button data-fave="${id}" ${isFave(id) ? 'class="is-active"' : ""}">
-				♥ Favorite
+			<button data-fave="${id}" aria-pressed="${isFave(id) ? "true" : "false"}">
+				<span aria-hidden="true">♥</span> Favorite
 			</button>
 		</p>`;
 }
@@ -94,6 +94,7 @@ function loadIcons() {
 
   // Create an icon
   let icon = document.createElement("span");
+  icon.setAttribute("aria-label", "(Favorite)");
   icon.textContent = " ♥";
 
   // Loop through each place and add an icon if it's a favorite
